@@ -76,7 +76,7 @@ export async function renderCryptoDatas(datas) {
 
 const inputSearch = document.getElementById("searchBar");
 
-inputSearch.addEventListener("input", () => {
+export async function daiAscoltatori() {
     let valore = inputSearch.value;
 
     let cercati = tutteCrypto.filter(c => 
@@ -104,4 +104,4 @@ inputSearch.addEventListener("input", () => {
         boxCrypto.innerHTML = `<p><img src="${crypto.image}" alt="${crypto.name} icon"> ${crypto.name} - ${formatted}</p>`;
         aside.appendChild(boxCrypto);
     });
-});
+}

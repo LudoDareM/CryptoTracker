@@ -1,5 +1,5 @@
 import { getCryptoList, getCryptoData, getCryptoGraphic } from "./api.js";
-import { renderCryptoList, renderCryptoDatas } from "./ui.js";
+import { renderCryptoList, renderCryptoDatas, daiAscoltatori } from "./ui.js";
 import { renderCryptoGraphic } from "./graphics.js";
 
 async function init() {
@@ -8,8 +8,20 @@ async function init() {
     console.log("Lista:", list);
 
     await renderCryptoList(list);
+    await addListener();
+}
 
+
+const inputSearch = document.getElementById("searchBar");
+
+inputSearch.addEventListener("input", async () => {
+    await daiAscoltatori();
+    await addListener();
+});
+
+async function addListener() {
     let cryptoCaricate = document.querySelectorAll(".boxCrypto");
+
     cryptoCaricate.forEach(crypto => {
         crypto.addEventListener('click', async () => {
             const id = crypto.dataset.id;
@@ -22,5 +34,6 @@ async function init() {
         })
     })
 }
+
 
 init();
