@@ -37,10 +37,6 @@ L’app utilizza l’API pubblica di CoinGecko per ottenere:
 
 👉 **https://ludodarem.github.io/CryptoTracker/**
 
-## 📸 Screenshot
-
-*(Puoi aggiungerli quando vuoi)*
-
 ## 📌 Note
 
 Questo progetto è stato realizzato per esercitarsi con:
